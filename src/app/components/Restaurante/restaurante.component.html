@@ -1,0 +1,41 @@
+<div class="page-header">
+  <h3>Restaurante</h3>
+</div>
+<div class="row">
+  <div class="col-md-10 container-restaurante">
+    <div class="form-group col-md-6">
+      <label class="subtitulo">Pesquisar Restaurante</label>
+      <input type="text" class="form-control" [(ngModel)]="consulta" placeholder="Digite o nome do restaurante">
+    </div>
+    <div class="col-md-6 botoes">
+      <button type="button" class="btn btn-success" routerLink="/restaurante/cadastrar">
+        <i class=" fa fa-plus " aria-hidden="true"></i> Cadastrar novo restaurante</button>
+    </div>
+    <div class="col-md-12 lista">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nº</th>
+            <th scope="col">Nome Restaurante</th>
+            <th scope="col">Acões</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let r of (listaRestaurante | filtrarRestaurante: consulta)">
+            <th scope="row">{{r.idRestaurante}}</th>
+            <td>{{r.nomeRestaurante}}</td>
+            <td>
+              <a href="#" [routerLink]="['/restaurante/alterar', r.idRestaurante]">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              </a>
+              <a>
+                <i class="fa fa-times remover" (click)="openModalDelete(r.idRestaurante, r.nomeRestaurante)" aria-hidden="true"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

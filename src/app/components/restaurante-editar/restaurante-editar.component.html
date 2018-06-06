@@ -1,0 +1,25 @@
+<div>
+<div class="page-header">
+  <h3>Atualizar Restaurante</h3>
+</div>
+<div class="container col-md-12">
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6" [ngClass]="">
+        <label class="control-label" class ="subtitulo">Nome do Restaurante
+        </label>
+        <input type="text" [(ngModel)]="restaurante.nomeRestaurante" [ngModelOptions]="{standalone: true}" class="form-control" placeholder=""
+          required>
+      </div>
+    </div>
+    <hr>
+    <div class="form-group col-md-12">
+      <button type="button" (click)="validateForm()" class="btn btn-success">
+        <i class="fa fa-pencil" aria-hidden="true"></i>Atualizar</button>
+      <a routerLink="/restaurante">
+        <button type="button" class="btn btn-danger">
+          <i class="fa fa-undo" aria-hidden="true"></i>Voltar</button>
+      </a>
+    </div>
+  </form>
+</div>

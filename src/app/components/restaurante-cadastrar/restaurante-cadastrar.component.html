@@ -1,0 +1,37 @@
+<div class="page-header">
+    <h3>Cadastrar Restaurante</h3>
+</div>
+<div class="row">
+    <div class="col-md-10 container-restaurante">
+        <div class="col-md-6 container-restaurante">
+
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6" [ngClass]="">
+                        <label class="control-label" class="subtitulo">Nome do Restaurante
+                        </label>
+                        <input type="text" [(ngModel)]="restaurante.nomeRestaurante" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Digite o nome"
+                            required>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="form-group col-md-12">
+                    <button type="button" (click)="cadastrar()" class="btn btn-success">
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i> Cadastrar</button>
+
+                    <a routerLink="/restaurante">
+                        <button type="button" class="btn btn-danger">
+                            <i class="fa fa-undo" aria-hidden="true"></i> Voltar</button>
+                    </a>
+                </div>
+
+            </form>
+
+
+        </div>
+
+        <div *ngIf="erroForm"> {{ messageError }} </div>
+
+    </div>
+</div>

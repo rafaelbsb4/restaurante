@@ -1,0 +1,45 @@
+<div class="page-header">
+  <h3>Pratos</h3>
+</div>
+<div class="row">
+  <div class="col-md-10 container-pratos">
+    <div class="form-group col-md-6">
+      <label class="subtitulo">Pesquisar Prato</label>
+      <input type="text" class="form-control" [(ngModel)]="consulta" placeholder="Digite o nome do Prato">
+    </div>
+    <div class="col-md-6 botoes">
+      <button type="button" class="btn btn-success" routerLink="/pratos/cadastrar">
+        <i class=" fa fa-plus " aria-hidden="true"></i> Cadastrar novo Prato</button>
+    </div>
+    <div class="col-md-12 lista">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nº</th>
+            <th scope="col">Restaurante</th>
+            <th scope="col">Nome do prato</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Acões</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of (listaPratos | filtrarPratos: consulta)">
+            <th scope="row">{{p.idPrato}}</th>
+            <td>{{p.Restaurante.nomeRestaurante}}</td>
+            <td>{{p.nomePrato}}</td>
+            <td>{{p.valorPrato | formatarValor}}</td>
+            <td>
+              <a href="#" [routerLink]="['/pratos/alterar', p.idPrato]">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              </a>
+              <a>
+                <i class="fa fa-times remover" (click)="openModalDelete(p.idPrato, p.nomePrato)" aria-hidden="true"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

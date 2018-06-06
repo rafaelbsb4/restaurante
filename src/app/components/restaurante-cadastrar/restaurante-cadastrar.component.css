@@ -1,0 +1,17 @@
+.titulo-restaurante {
+    font-size: 25px;
+    margin-left: 4%;
+}
+
+.subtitulo{
+    font-weight: bold;
+}
+
+.botoes {
+    margin-bottom: 20px;
+}
+
+.remover {
+    margin-left:5px;
+    color:red;
+}

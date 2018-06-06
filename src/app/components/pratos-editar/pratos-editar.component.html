@@ -1,0 +1,33 @@
+<div class="page-header">
+    <h3>Editar Prato</h3>
+</div>
+<div class="row">
+    <div class="col-md-8 container-pratos">
+        <form class="col-md-8">
+            <div class="form-row" class="col-md-6">
+                <label class="subtitulo">Restaurante
+                </label>
+                <select name="nomeRestaurante" [(ngModel)]="prato.idRestaurante" class="form-control">
+                    <option *ngFor="let r of listaRestaurante" [ngValue]="r.idRestaurante">{{r.nomeRestaurante}}</option>
+                </select>
+                <label class="control-label" class="subtitulo">Nome do Prato
+                    <input type="text" [(ngModel)]="prato.nomePrato" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Digite o nome"
+                        required>
+                </label>
+                <label class="control-label" class="subtitulo">Preço
+                    <input type="text" currencyMask [(ngModel)]="prato.valorPrato" [ngModelOptions]="{standalone: true}" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+                        class="form-control" placeholder="Digite Preço" required>
+                </label>
+            </div>
+            <hr>
+            <div class="form-group col-md-12">
+                <button type="button" (click)="update()" class="btn btn-success">
+                    <i class="fa fa-floppy-o" aria-hidden="true"></i> Atualizar</button>
+                <a routerLink="/pratos">
+                    <button type="button" class="btn btn-danger">
+                        <i class="fa fa-undo" aria-hidden="true"></i> Voltar</button>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

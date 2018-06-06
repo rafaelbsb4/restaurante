@@ -1,0 +1,20 @@
+.titulo-pratos {
+    font-size: 25px;
+    margin-left: 4%;
+}
+.subtitulo{
+    font-weight: bold;
+}
+
+.container-pratos {
+    margin: 0 auto;
+}
+
+.botoes {
+    margin-bottom: 20px;
+}
+
+.remover {
+    margin-left:5px;
+    color:red;
+}
