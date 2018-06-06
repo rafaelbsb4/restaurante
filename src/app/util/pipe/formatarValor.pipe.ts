@@ -8,7 +8,7 @@ import { NumberUtil } from "../NumberUtil";
 export class FormatarValorPipe implements PipeTransform {
 
     transform(valor: any): any {
-        valor = NumberUtil.convertToFormattedNumber(valor, 2, true);
+        valor = NumberUtil.converteReal(valor, 2, true);
         return valor;
     }
 
